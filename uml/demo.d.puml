@@ -5,7 +5,7 @@
 
 !include <tupadr3/devicons2/nodejs>
 
-!include ./sprites.puml
+!include https://raw.githubusercontent.com/bondden/puml-sprites/main/uml/sprites.puml
 
 skinparam {
   linetype ortho
@@ -52,13 +52,13 @@ rectangle app {
   component lcn [
     <$langchain*.3> lcn
     --
-    [[https://github.com/qdrant/qdrant Qdrant]]
+    [[https://github.com/langchain-ai/langchain Langchain]]
   ]
   
   component vdb [
     <$qdrant*.3> vdb
     --
-    [[https://github.com/langchain-ai/langchain Langchain]]
+    [[https://github.com/qdrant/qdrant Qdrant]]
   ]
   
   interface snk [

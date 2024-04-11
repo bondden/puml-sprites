@@ -1,6 +1,6 @@
 @startuml
 
-' https://github.com/traefik/traefik/t
+' https://github.com/traefik/traefik
 sprite $traefik [100x100/16z] {
 xTT7beD040HHRX3tF-tOpHYfNuYGL-Kwcu-dsAwVoMGouJiN5gpI2NXSWzzvL8EB6t1f0ovjy6245xYei06FTRjwmlXT44eKjD85813XwU-2KFffyaeNF6BA
 g4Z22ul5GZ34OWD2C8JOHYHE6Yk4u7PaqH2477waGJ2m1ieGbNhHTrmmZ19kVw_eVUmtfzk_eDXblXu4luBGzwk241HTxBj78_v7bP80e4f904J9AAoZIWXX
