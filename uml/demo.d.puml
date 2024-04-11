@@ -1,0 +1,81 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+!theme mono
+
+!include <tupadr3/devicons2/nodejs>
+
+!include ./sprites.puml
+
+skinparam {
+  linetype ortho
+}
+
+title Sprites Demo
+
+component tfk [
+  <$traefik*.3> tfk
+  --
+  [[https://github.com/traefik/traefik/t traefik]]
+]
+
+rectangle ctl {
+
+  component nxs [
+    <$nexus*.3> nxs
+    --
+    [[https://github.com/sonatype/nexus-public Nexus]]
+  ]
+  
+  component ptn [
+    <$portainer*.3> ptn
+    --
+    [[https://github.com/portainer/portainer Portainer]]
+  ]
+  
+  component elk [
+    <$elk*.3> elk
+    --
+    [[https://github.com/elastic Elastic Stack]]
+  ]
+
+}
+
+rectangle app {
+
+  component api [
+    <$nodejs*.5> api
+    --
+    Some API
+  ]
+
+  component lcn [
+    <$langchain*.3> lcn
+    --
+    [[https://github.com/qdrant/qdrant Qdrant]]
+  ]
+  
+  component vdb [
+    <$qdrant*.3> vdb
+    --
+    [[https://github.com/langchain-ai/langchain Langchain]]
+  ]
+  
+  interface snk [
+    snk
+    Log Sink
+  ]
+  
+  api -- lcn
+  lcn - vdb
+
+}
+
+elk -- snk
+
+tfk -- nxs
+tfk -- api
+tfk -- elk
+tfk -- ptn
+
+@enduml
