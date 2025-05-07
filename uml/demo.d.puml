@@ -5,7 +5,9 @@
 
 !include <tupadr3/devicons2/nodejs>
 
-!include https://raw.githubusercontent.com/bondden/puml-sprites/main/uml/sprites.puml
+'!include https://raw.githubusercontent.com/bondden/puml-sprites/main/uml/sprites.puml
+
+!include ./sprites.puml
 
 skinparam {
   linetype ortho
@@ -39,6 +41,12 @@ rectangle ctl {
     [[https://github.com/elastic Elastic Stack]]
   ]
 
+  component vmx [
+    <$victoriametrics*.3>
+    --
+    [[https://github.com/VictoriaMetrics/VictoriaMetrics VictoriaMetrics]]
+  ]
+
 }
 
 rectangle app {
@@ -50,7 +58,7 @@ rectangle app {
   ]
 
   component lcn [
-    <$langchain*.3> lcn
+    <$langchain*.3> <$nvidia*.3> lcn
     --
     [[https://github.com/langchain-ai/langchain Langchain]]
   ]
@@ -61,9 +69,15 @@ rectangle app {
     [[https://github.com/qdrant/qdrant Qdrant]]
   ]
   
-  interface snk [
-    snk
-    Log Sink
+  database dbc [
+    <$clickhouse*.3> cdb
+  ]
+  
+  collections agt [
+    agt
+    --
+    Observability
+    Agents
   ]
   
   api -- lcn
@@ -71,11 +85,14 @@ rectangle app {
 
 }
 
-elk -- snk
+elk -- agt
 
 tfk -- nxs
 tfk -- api
 tfk -- elk
 tfk -- ptn
+tfk -- vmx
+
+vmx -- agt
 
 @enduml
