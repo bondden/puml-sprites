@@ -14,8 +14,6 @@ IT products logos sprites, that are missing in the PlantUML standard library.
 
 !theme mono
 
-!include <tupadr3/devicons2/nodejs>
-
 !include https://raw.githubusercontent.com/bondden/puml-sprites/main/uml/sprites.puml
 
 component tfk [
