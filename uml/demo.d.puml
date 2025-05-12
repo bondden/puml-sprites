@@ -87,6 +87,7 @@ rectangle app {
     --
     Observability
     Agents
+    |_ <$fluent*.24> [[https://github.com/fluent/fluent-bit fluent-bit]]
   ]
   
   api -- lcn
