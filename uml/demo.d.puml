@@ -13,7 +13,10 @@ skinparam {
   linetype ortho
 }
 
-title Sprites Demo
+title 
+  Sprites Demo
+  
+end title
 
 component dns [
   <$dnsmasq*.4> dns
@@ -95,6 +98,12 @@ rectangle app {
   api - dbc
 
 }
+
+component ha [
+  <$haproxy*.3> ha
+  --
+  [[https://github.com/haproxy/haproxy/ haproxy]]
+]
 
 elk -- agt
 
